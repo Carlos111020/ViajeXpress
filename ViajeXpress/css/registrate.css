@@ -1,0 +1,61 @@
+body{
+  background-color:navy;
+  color: black;
+  font-family: "Trebuchet MS", sans-serif;
+  margin: 0;
+}
+
+.contenedor-registro{
+    display: flex; /*activar flexbox*/
+    flex-direction: column; /*h2 y p en columnas*/
+    justify-content: center; /*centrado vertical*/
+    align-items: center; /*centrado horizontal*/
+    text-align: center; /*Justificado centrado*/
+    background-color: white;
+    width: 300px;
+    padding: 30px;
+    margin: 10px auto;
+    border-radius: 50px;
+}
+
+#form-register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /*mas cerca al ancho del contenedor*/
+}
+
+#form-register label{
+    align-self: flex-start; /*alinear de forma independiente*/
+    margin-bottom: 5px;
+}
+
+#form-register input{
+    align-self: flex-start;
+    margin-bottom: 0px;
+    width: 100%; /*ocupa el ancho del form-login*/
+    padding: 5px;
+    border-radius: 20px;
+    border-color: navy;
+}
+
+#form-register button{
+    background-color: navy;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#form-register button:hover{
+    background-color: rgb(110, 110, 255);
+}
+
+a{
+    text-decoration: none;
+    color: navy;
+}
+a:hover{
+    color: rgb(110, 110, 255);
+}
