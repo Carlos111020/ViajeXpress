@@ -1,71 +1,83 @@
-body{
-  background-color:navy;
-  color: black;
+body {
+  background-color: navy;
+  color: navy;
   font-family: "Trebuchet MS", sans-serif;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.saludo{
-    color: white;
-    display: flex; /*activar flexbox*/
-    flex-direction: column; /*h2 y p en columnas*/
-    justify-content: center; /*centrado vertical*/
-    align-items: center; /*centrado horizontal*/
-    text-align: center; /*Justificado centrado*/
-    margin: 20px;
+.contenedor-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 320px;
+  padding: 25px 30px;
+  border-radius: 50px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.contenedor-login{
-    display: flex; /*activar flexbox*/
-    flex-direction: column; /*h2 y p en columnas*/
-    justify-content: center; /*centrado vertical*/
-    align-items: center; /*centrado horizontal*/
-    text-align: center; /*Justificado centrado*/
-    background-color: white;
-    width: 300px;
-    padding: 30px;
-    margin: auto;
-    border-radius: 50px;
+#form-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
 }
 
-#form-login{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%; /*mas cerca al ancho del contenedor*/
+#form-login label {
+  text-align: left; /* texto alineado a la izquierda */
+  margin-bottom: 3px;
+  font-weight: bold;
+  color: navy;
 }
 
-#form-login label{
-    align-self: flex-start; /*alinear de forma independiente*/
-    margin-bottom: 5px;
+#form-login input {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 2px solid navy; /* borde azul más grueso */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
 }
 
-#form-login input{
-    align-self: flex-start;
-    margin-bottom: 5px;
-    width: 100%; /*ocupa el ancho del form-login*/
-    padding: 5px;
-    border-radius: 20px;
-    border-color: navy;
+#form-login input:focus {
+  outline: none;
+  box-shadow: 5px 5px 5px rgba(0, 0, 128, 0.4);
 }
 
-#form-login button{
-    background-color: navy;
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 20px;
+#form-login button {
+  background-color: navy;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#form-login button:hover{
-    background-color: rgb(110, 110, 255);
+#form-login button:hover {
+  background-color: rgb(110, 110, 255);
+  transform: scale(1.03);
 }
 
-a{
-    text-decoration: none;
-    color: navy;
+a {
+  text-decoration: none;
+  color: navy;
+  font-weight: bold;
 }
-a:hover{
-    color: rgb(110, 110, 255);
+
+a:hover {
+  color: rgb(110, 110, 255);
+}
+
+@media (max-width: 400px) {
+  .contenedor-login {
+    width: 90%;
+    padding: 20px;
+  }
 }
