@@ -6,6 +6,8 @@
     <title>ViajeXpress</title>
     <!--Enlace css-->
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/inicio.css">
 </head>
 <body>
     <!--barra navegacion-->
@@ -29,11 +31,45 @@
             <li><a href="cuenta.html">Cuenta</a></li>
         </ul>
     </nav>
-    <div class="descripcion">
+    <div class="fondo1">
+        <img src="img/fondo1.avif" alt="playa">
+    </div>
+
+    <div class="contenedor-inicio">
+        <h2>Encuentra tu proximo Viaje</h2>
+        <div class="form-busqueda">
+            <label for="origen">Origen</label>
+            <input type="text" id="bus-origen" name="origen" placeholder="Desde donde Viajas" required>
+            <br><br>
+            <label for="sestino">Destino</label>
+            <input type="text" id="bus-destino" name="destino" placeholder="Hacia donde Viajas" required>
+            <br><br>
+            <label for="entrada">Entrada</label>
+            <input type="date" id="bus-entrada" name="entrada" placeholder="Fecha llegada" required>
+            <br><br>
+            <label for="salida">Salida</label>
+            <input type="date" id="bus-salida" name="salida" placeholder="Fecha Salida" required>
+            <br><br>
+            <label for="habitaciones">Habitaciones</label>
+            <input type="number" id="bus-habitaciones" name="habitaciones" placeholder="0" required>
+            <br><br>
+            <label for="personas">Personas</label>
+            <input type="number" id="bus-personas" name="personas" placeholder="0" required>
+            <br><br>
+        </div>
+    </div>
+
+    <div class="inicio">
         <h2>¿Quienes Somos?</h2>
-        <p>En ViajeXpress hacemos que viajar sea más fácil, rápido y seguro. Desde nuestra plataforma podrás reservar vuelos, hoteles, paquetes turísticos y aprovechar las mejores ofertas en un solo lugar.</p>
-        <p>Nuestro sistema cuenta con una geolocalización interactiva, donde podrás visualizar las principales actividades, atracciones y experiencias disponibles en cada destino antes de viajar. Así planificas cada detalle de tu aventura con total confianza.</p>
-        <p>Ya sea que busques una escapada rápida, unas vacaciones en familia o un viaje de ensueño, en ViajeXpress encontrarás todo lo que necesitas para convertir tus planes en experiencias inolvidables.</p>
+        <p>En ViajeXpress hacemos que viajar sea más fácil, rápido y seguro. 
+            Desde nuestra plataforma podrás reservar vuelos, hoteles, 
+            paquetes turísticos y aprovechar las mejores ofertas en un solo 
+            lugar. Nuestro sistema cuenta con una geolocalización interactiva, 
+            donde podrás visualizar las principales actividades, atracciones                 y experiencias disponibles en cada destino antes de viajar. 
+            Así planificas cada detalle de tu aventura con total confianza. 
+            Ya sea que busques una escapada rápida, unas vacaciones en familia 
+            o un viaje de ensueño, en ViajeXpress encontrarás todo lo que 
+            necesitas para convertir tus planes en experiencias inolvidables.</p>
     </div>
     <div class="ofertas">
         <h2>Ofertas Disponibles</h2>

@@ -1,0 +1,30 @@
+body{
+   background-color: navy;
+   color: white;
+   font-family: "Trebuchet MS", sans-serif;
+}
+
+.fondo1{
+    display: flex;
+}
+
+.fondo1 img{
+    width: 2000px;
+}
+
+.inicio{
+    margin: 100px;
+}
+
+.inicio h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inicio p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    line-height: 2;
+}
