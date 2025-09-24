@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ViajeXpress - Recuperar Contraseña</title>
+  <link rel="stylesheet" href="css/contraseña.css" />
+</head>
+<body>
+  <div class="form-contraseña">
+    <div class="logo">
+      <img src="img/logo.png" alt="logo" width="200" />
+    </div>
+    <h2>Recuperar contraseña</h2>
+    <form id="form-reset">
+      <div id="correo-section">
+        <label for="correo">Correo</label>
+        <input type="email" id="reset-correo" name="correo" placeholder="Ingresa tu correo" required />
+        <br /><br />
+        <button type="button" id="btn-enviar">Enviar Código</button>
+      </div>
+
+      <div id="codigo-section" style="display: none;">
+        <label for="codigo">Ingresa el código</label>
+        <input
+          type="text"
+          id="codigo"
+          name="codigo"
+          placeholder="Código recibido"
+          required
+        />
+        <br /><br />
+        <button type="submit">Verificar Código</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const btnEnviar = document.getElementById("btn-enviar");
+    const correoInput = document.getElementById("reset-correo");
+    const correoSection = document.getElementById("correo-section");
+    const codigoSection = document.getElementById("codigo-section");
+
+    function esCorreoValido(correo) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(correo);
+    }
+
+    btnEnviar.addEventListener("click", function () {
+      const correo = correoInput.value.trim();
+
+      if (!esCorreoValido(correo)) {
+        alert("Por favor ingresa un correo válido.");
+        return;
+      }
+
+      // Oculta la sección del correo y muestra solo la del código
+      correoSection.style.display = "none";
+      codigoSection.style.display = "block";
+    });
+
+    document.getElementById("form-reset").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const codigo = document.getElementById("codigo").value.trim();
+
+      if (codigo !== "") {
+        alert("✅ Código verificado correctamente");
+        // Aquí puedes redirigir o continuar el flujo
+      } else {
+        alert("Por favor ingresa el código.");
+      }
+    });
+  </script>
+</body>
+</html>
