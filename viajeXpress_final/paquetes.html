@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paquetes Turísticos - ViajeXpress</title>
+  <link rel="stylesheet" href="paquetes.css">
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;700&family=Athiti:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body style="background-image: url('img/fondo.jpg');">
+
+  <!-- NAV -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo ViajeXpress">
+        <span>ViajeXpress</span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="#">Vuelos</a></li>
+        <li><a href="#">Alojamientos</a></li>
+        <li><a href="paquetes.html" class="active">Paquetes</a></li>
+        <li><a href="#">Actividades</a></li>
+        <li><a href="login.html">Cuenta</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="contenedor-paquetes">
+    <h1 class="titulo-principal">Paquetes Turísticos</h1>
+
+    <!-- Buscador -->
+    <div class="buscador">
+      <input type="text" placeholder="Origen">
+      <input type="text" placeholder="Destino">
+      <input type="date" placeholder="Entrada">
+      <input type="date" placeholder="Salida">
+      <input type="number" placeholder="Personas">
+      <input type="number" placeholder="Cuartos">
+      <button class="btn-buscar">Buscar</button>
+    </div>
+
+    <!-- Destinos -->
+    <div class="destinos">
+      <div class="tarjeta">
+        <img src="img/cartagena.jpg" alt="Cartagena">
+        <h3>Cartagena</h3>
+      </div>
+      <div class="tarjeta">
+        <img src="img/miami.jpg" alt="Miami">
+        <h3>Miami</h3>
+      </div>
+      <div class="tarjeta">
+        <img src="img/curazao.jpg" alt="Curazao">
+        <h3>Curazao</h3>
+      </div>
+      <div class="tarjeta">
+        <img src="img/rio.jpg" alt="Río de Janeiro">
+        <h3>Río de Janeiro</h3>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
