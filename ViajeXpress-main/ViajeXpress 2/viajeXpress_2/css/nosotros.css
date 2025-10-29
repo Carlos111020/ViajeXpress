@@ -1,0 +1,93 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Athiti', sans-serif;
+  background: url('../img/fondo.jpg') no-repeat center center/cover;
+  color: #fff;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.612);
+  margin: 30px auto;
+  width: 85%;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+section h2 {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+section p {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+
+section a {
+  color: #D3C1FF;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+section a:hover {
+  text-decoration: underline;
+}
+
+
+.btn {
+  background: #D3C1FF;
+  color: #000;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,0,0.9);
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  section {
+    width: 95%;
+    padding: 40px 15px;
+  }
+}

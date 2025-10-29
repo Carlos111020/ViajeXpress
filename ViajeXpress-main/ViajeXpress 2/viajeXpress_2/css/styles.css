@@ -1,0 +1,279 @@
+/* === Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* === Tema (claro por defecto) === */
+  :root {
+    color-scheme: light dark;
+  
+    /* Colores base */
+    --bg: #ffffff;
+    --fg: #111111;
+    --muted: #6b7280;
+  
+    /* Superficies / bordes */
+    --surface: #f6f7fb;
+    --border: #e5e7eb;
+  
+    /* Enlaces / acento */
+    --accent: #D3C1FF;
+    --link: #111111;         /* enlaces de navbar en claro */
+    --link-hover: #D3C1FF;
+  
+    /* Componentes */
+    --menu-bg: rgba(0,0,0,0.8);  /* menú móvil */
+    --btn-bg: var(--accent);
+    --btn-fg: #000;
+  
+    /* Textos destacados (h2 hero) */
+    --heading-contrast: #000;
+  
+    /* Overlay sobre imagen de fondo (mejora legibilidad) */
+    --overlay: rgba(0,0,0,.15);
+  }
+  
+  :root[data-theme="dark"] {
+    --bg: #0f1115;
+    --fg: #e6e6e6;
+    --muted: #9aa1aa;
+  
+    --surface: #161a21;
+    --border: #232833;
+  
+    --accent: #C8B3FF;
+    --link: #e6e6e6;         /* enlaces de navbar en oscuro */
+    --link-hover: #C8B3FF;
+  
+    --menu-bg: rgba(15,17,21,0.9);
+    --btn-bg: var(--accent);
+    --btn-fg: #0f1115;
+  
+    --heading-contrast: #ffffff;
+  
+    --overlay: rgba(0,0,0,.35);
+  }
+  
+  /* === Base === */
+  html, body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Athiti', sans-serif;
+    transition: background .25s ease, color .25s ease;
+  }
+  
+  /* Fondo con imagen + overlay para legibilidad */
+  body {
+    position: relative;
+    background: var(--bg) url('../img/fondo.jpg') no-repeat center center / cover;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: var(--overlay);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* === Header / Hero === */
+  header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1; /* por encima del overlay */
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo img {
+    height: 100px;
+    /* leve realce en oscuro sobre fondos claros del logo */
+    filter: drop-shadow(0 0 1px rgba(0,0,0,.25));
+  }
+  
+  .logo span {
+    font-family: 'Alexandria', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--accent);
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 70px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: var(--link);
+    font-size: 30px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: var(--link-hover);
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background: var(--fg);
+    margin: 4px;
+  }
+  
+  .hero {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .hero h1 {
+    font-family: 'Athiti', sans-serif;
+    font-size: 3rem;
+    color: var(--fg);
+  }
+  
+  .hero h2 {
+    font-family: 'Alexandria', sans-serif;
+    font-size: 5rem;
+    color: var(--heading-contrast);
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: var(--fg);
+  }
+  
+  /* Botón genérico */
+  .btn {
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s, transform .06s;
+    border: 1px solid var(--border);
+  }
+  .btn:hover {
+    background: #ffffff;
+    color: #000;
+  }
+  :root[data-theme="dark"] .btn:hover {
+    background: #ededf1;
+    color: #0f1115;
+  }
+  .btn:active { transform: translateY(1px); }
+  
+  /* ====== Paquetes Turísticos ====== */
+  .contenedor-paquetes {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .titulo-principal {
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--fg);
+  }
+  .btn-theme{
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: .35rem .6rem;
+    cursor: pointer;
+    color: var(--fg);
+    transition: background .2s, border-color .2s;
+  }
+  .btn-theme:hover{
+    background: var(--surface);
+    border-color: var(--fg);
+  }
+  
+  
+  /* Buscador */
+  .buscador {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+  
+  .buscador input,
+  .buscador button {
+    padding: 12px 15px;
+    border: 2px solid var(--fg);
+    border-radius: 8px;
+    font-family: 'Athiti', sans-serif;
+    font-size: 1rem;
+    background: var(--surface);
+    color: var(--fg);
+  }
+  
+  .buscador button {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color .3s, border-color .3s;
+    border-color: #2d2d2d;
+  }
+  
+  .buscador button:hover {
+    background-color: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: var(--menu-bg);
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      backdrop-filter: blur(2px);
+    }
+  
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+  

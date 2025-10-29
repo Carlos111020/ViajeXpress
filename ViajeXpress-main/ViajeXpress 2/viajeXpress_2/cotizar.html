@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cotizar - ViajeXpress</title>
+
+  <!-- Evita parpadeo de tema al cargar -->
+  <script>
+    (() => {
+      try {
+        const s = localStorage.getItem('theme');
+        if (s) {
+          document.documentElement.setAttribute('data-theme', s);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/cotizar.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600&family=Athiti&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/logo.png" alt="ViajeXpress Logo" class="logo-img" />
+        <span>ViajeXpress</span>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="paquetes.html">Paquetes</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="cotizar.html" class="active">Cotizar</a></li>
+        <li><a href="login.html">Iniciar Sesión</a></li>
+        <li><a href="register.html">Registrarse</a></li>
+      </ul>
+
+      <!-- Botón de tema -->
+      <button id="themeToggle" class="btn-theme" type="button" aria-pressed="false" title="Cambiar tema">🌓</button>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+      </div>
+    </nav>
+
+    <!-- Hero compacto -->
+    <div class="hero hero-small">
+      <h2>Cotiza tu viaje</h2>
+      <p>Cuéntanos a dónde vas y cuándo viajas. Te responderemos pronto.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="cotizar" id="cotizar">
+      <h2 class="titulo-principal">Formulario de cotización</h2>
+      <form id="quoteForm" novalidate>
+        <label>Nombre
+          <input type="text" name="nombre" required minlength="3" placeholder="Tu nombre" />
+          <small class="error" aria-live="polite"></small>
+        </label>
+
+        <label>Email
+          <input type="email" name="email" required placeholder="tucorreo@example.com" />
+          <small class="error" aria-live="polite"></small>
+        </label>
+
+        <label>Destino
+          <input type="text" name="destino" required placeholder="Ej. Cartagena" />
+          <small class="error" aria-live="polite"></small>
+        </label>
+
+        <label>Fecha de viaje
+          <input type="date" name="fecha" required />
+          <small class="error" aria-live="polite"></small>
+        </label>
+
+        <label>Presupuesto aproximado (opcional)
+          <input type="number" name="presupuesto" min="0" step="100000" placeholder="COP" />
+          <small class="error" aria-live="polite"></small>
+        </label>
+
+        <button type="submit" class="btn">Solicitar cotización</button>
+      </form>
+
+      <!-- Toast de confirmación -->
+      <div id="toast" class="toast" role="status" aria-live="polite" hidden>
+        Solicitud enviada. Te contactaremos pronto.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-social">
+      <h3>Síguenos</h3>
+      <a href="#"><img src="img/facebook.png" alt="Facebook" /></a>
+      <a href="#"><img src="img/instagram.webp" alt="Instagram" /></a>
+      <a href="#"><img src="img/x.webp" alt="X (Twitter)" /></a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 ViajeXpress. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js" defer></script>
+  <script src="js/cotizar.js" defer></script>
+</body>
+</html>

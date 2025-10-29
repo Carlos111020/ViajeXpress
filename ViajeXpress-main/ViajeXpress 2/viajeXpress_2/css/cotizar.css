@@ -1,0 +1,101 @@
+/* Hero más compacto para esta página */
+.hero.hero-small {
+    top: 30%;
+    transform: translate(-50%, -30%);
+  }
+  /* --- Compactar el header SOLO en cotizar --- */
+header {
+    height: 42vh;          /* antes 100vh; reduce el alto del header */
+    min-height: 260px;     /* para que no quede demasiado chico en móviles */
+  }
+  
+  /* El hero ya no va absoluto: que fluya y ocupe solo su contenido */
+  .hero.hero-small {
+    position: relative;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 48px 16px;    /* espacio interno cómodo */
+    text-align: center;
+  }
+  
+  .hero.hero-small h2 { margin-bottom: 6px; }
+  .hero.hero-small p  { opacity: .9; }
+  
+  /* Si tu navbar es fija/sticky y tapa el hero, añade un margen arriba */
+  @media (max-width: 768px) {
+    .hero.hero-small { padding: 40px 16px; }
+  }
+  
+  .cotizar {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  
+  .cotizar .titulo-principal {
+    text-align: center;
+    margin-bottom: 18px;
+    color: var(--fg);
+  }
+  
+  .cotizar form {
+    display: grid;
+    gap: 16px;
+  }
+  
+  .cotizar label {
+    display: grid;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--fg);
+  }
+  
+  .cotizar input {
+    padding: 12px 14px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-family: 'Athiti', sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    outline: none;
+    transition: border-color .2s, box-shadow .2s, background .2s, color .2s;
+  }
+  
+  .cotizar input:focus {
+    border-color: var(--accent);
+    /* efecto de foco suave; usa color-mix si está disponible */
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+  
+  .error {
+    min-height: 1em;
+    font-size: .9rem;
+    color: #ff6b6b;
+  }
+  
+  .is-invalid {
+    border-color: #ff6b6b !important;
+  }
+  
+  .toast {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: 0 6px 20px rgba(0,0,0,.12);
+    color: var(--fg);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .cotizar {
+      margin: 40px 16px;
+      padding: 18px;
+    }
+  }
+  

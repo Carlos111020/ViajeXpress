@@ -1,0 +1,39 @@
+/* ====== Footer Redes Sociales ====== */
+.footer-social {
+  text-align: center;
+  margin: 40px 0 20px 0;
+}
+
+.footer-social h3 {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #D3C1FF;
+}
+
+.footer-social a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.footer-social a img {
+  width: 32px;
+  height: 32px;
+}
+
+.footer-social a img:hover {
+  transform: scale(1.5);
+}
+
+.footer-bottom {
+  background: rgba(0,0,0,0.9);
+  text-align: center;
+  padding: 15px;
+  border-top: 2px solid #D3C1FF;
+}
+
+.footer-bottom p {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-family: 'Athiti', sans-serif;
+}
